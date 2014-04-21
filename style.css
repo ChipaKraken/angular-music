@@ -1,0 +1,18 @@
+p:hover {
+	border-bottom-color: #f0f0f0;
+	color: #000;
+	background: #f0f0f0;
+	cursor: pointer;
+}
+p:active {
+	border-bottom-color: #ffa200;
+	color: #FFF;
+	background: #ffa200;
+	cursor: pointer;
+}
+.act{
+	border-bottom-color: #ffa200;
+	color: #FFF;
+	background: #ffa200;
+	cursor: pointer;
+}
