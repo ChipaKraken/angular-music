@@ -12,6 +12,7 @@ function squerify (img) {
 var sel = 0;
 var scr = false;
 var audio = '';
+var sc_api_key='?client_id=0557caec313ae36a9d6a21841293da11';
 
 function musicContr($scope) {
   $scope.songs = [];
