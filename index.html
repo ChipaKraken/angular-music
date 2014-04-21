@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kraken Music App</title>
+	<link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app>
+<div ng-controller="musicContr">
+
+	<form ng-submit="searchSongs()">
+		<input type="text" ng-model="artist" placeholder="Artist to search" id="artist">
+		<input class="btn-primary" type="submit" value="Search">
+	</form>
+
+	<p id="bio"></p>
+
+	<table>
+		<tr>
+			<th ng-repeat="art in arts"><p class="nextart" ng-click="search(art)">{{art}}</p></th>
+		</tr>
+		<tr>
+			<td ng-repeat="img in imgs"><img src="{{img}}"></td>
+		</tr>
+	</table>
+
+	<div ng-repeat="song in songs">
+		<p ng-click="play(song.artist.name, song.name, $index)" ng-class='{"act":sel==$index}' class="s">{{song.artist.name}} - {{song.name}}</p>	
+	</div>
+</div>
+</body>
+</html>
