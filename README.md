@@ -10,3 +10,7 @@ Just go to terminal and type
         git clone https://github.com/ChipaKraken/c_report
         
 then open index.html in browser
+
+Screenshot (example):
+---------
+![Screenshot taken Apr 21 2014](http://i.imgur.com/dSgeksZ.jpg)
