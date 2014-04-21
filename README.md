@@ -1,7 +1,7 @@
 angular-music
 =============
 
-angular music takes info from last.fm and ext.fm
+angular music takes info from last.fm and ex.fm
 
 How to use it:
 ---------
