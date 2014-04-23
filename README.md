@@ -7,7 +7,7 @@ Installation:
 ---------
 Just go to terminal and type
 
-        git clone https://github.com/ChipaKraken/c_report
+        git clone https://github.com/ChipaKraken/angular-music
         cd angular-music/
         npm install
         bower install
