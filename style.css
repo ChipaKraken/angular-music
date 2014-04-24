@@ -10,6 +10,9 @@ p:active {
 	background: #ffa200;
 	cursor: pointer;
 }
+img{
+	cursor: pointer;
+}
 .act{
 	border-bottom-color: #ffa200;
 	color: #FFF;
