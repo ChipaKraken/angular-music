@@ -26,7 +26,7 @@
 			<th ng-repeat="art in arts"><p class="nextart" ng-click="search(art)">{{art}}</p></th>
 		</tr>
 		<tr>
-			<td ng-repeat="img in imgs"><img src="{{img}}"></td>
+			<td ng-repeat="img in imgs"><img ng-src="{{img}}" ng-click="search(arts[$index])"></td>
 		</tr>
 	</table>
 
