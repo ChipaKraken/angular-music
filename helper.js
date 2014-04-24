@@ -27,3 +27,17 @@ function get_imgs (sim) {
   imgs.push(squerify(sim[4].image[3]['#text']));
   return imgs;
 }
+function is_cyrillic(str) {
+		var checker = 0;
+		var url = 'http://ws.audioscrobbler.com/2.0/?method=artist.getcorrection&artist='+str+'&api_key=a75bd15e529625f1fcc5eff85ddb2c05&format=json';
+		for(var i=0; i<str.length; i++) {
+		if (!(str.charCodeAt(i) < 123)) {
+			checker+=1;
+		}
+		}
+		if (checker > 0) {
+			var jsonArr = JSON.parse(httpGet(url));
+			str = jsonArr.corrections.correction.artist.name;
+		};
+		return str;
+}
