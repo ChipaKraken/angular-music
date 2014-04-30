@@ -2,7 +2,6 @@
 	<input type="text" ng-model="artist" placeholder="Artist to search" id="artist">
 	<input class="btn-primary" type="submit" value="Search">
 </form>
-
 <table>
 	<tr>
 		<th ng-repeat="art in arts"><p class="nextart" ng-click="search(art)">{{art}}</p></th>
@@ -11,9 +10,12 @@
 		<td ng-repeat="img in imgs"><img ng-src="{{img}}" class="img-thumbnail" ng-click="search(arts[$index])"></td>
 	</tr>
 </table>
-
-<div ng-repeat="song in songs">
-	<p ng-click="play(song.artist.name, song.name, $index)" ng-class='{"act":sel==$index}' class="s">{{song.artist.name}} - {{song.name}}</p>	
+<div class="col-sm-5">
+	<div class="list-group">
+		<div ng-repeat="song in songs">
+			<a ng-click="play(song.artist.name, song.name, $index)" ng-class='{"active":sel==$index}' class="list-group-item" class="s">{{song.artist.name}} - {{song.name}}</a>	
+		</div>
+	</div>
 </div>
 <div ui-view>
 </div>
