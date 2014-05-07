@@ -32,4 +32,9 @@ get_imgs = (sim)->
 corrector = (str)->
 	url = 'http://ws.audioscrobbler.com/2.0/?method=artist.getcorrection&artist='+str+'&api_key=a75bd15e529625f1fcc5eff85ddb2c05&format=json'
 	jsonArr = JSON.parse(httpGet(url))
-	str = jsonArr.corrections.correction.artist.name
+	try
+		ans = jsonArr.corrections.correction.artist.name
+	catch e
+		ans = str
+	ans
+	

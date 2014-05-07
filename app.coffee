@@ -36,7 +36,8 @@ angular.module 'app', ['ui.router']
 		return
 
 	$scope.searchSongs = ()->
-		$scope.search($scope.artist)
+		art = corrector $scope.artist
+		$scope.search(art)
 		return
 
 	$scope.play = (who, what, id)->
