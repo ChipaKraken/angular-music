@@ -2,32 +2,17 @@
 <html>
 <head>
 	<title>Kraken Music App</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<script src="app.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="brain.js"></script>
 </head>
-<body ng-app>
-<div ng-controller="musicContr">
+<body ng-app="app">
 
-	<form ng-submit="searchSongs()">
-		<input type="text" ng-model="artist" placeholder="Artist to search" id="artist">
-		<input class="btn btn-primary" type="submit" value="Search">
-	</form>
+<a href="https://github.com/ChipaKraken/c_report/archive/master.zip">Download Angular Music</a>
+<span> or </span>
+<a href="https://github.com/ChipaKraken/angular-music">View on GitHub</a>
 
-	<p id="bio"></p>
-
-	<table>
-		<tr>
-			<th ng-repeat="art in arts"><p class="nextart" ng-click="search(art)">{{art}}</p></th>
-		</tr>
-		<tr>
-			<td ng-repeat="img in imgs"><img ng-src="{{img}}"></td>
-		</tr>
-	</table>
-
-	<div ng-repeat="song in songs">
-		<p ng-click="play(song.artist.name, song.name, $index)" ng-class='{"act":sel==$index}' class="s">{{song.artist.name}} - {{song.name}}</p>	
-	</div>
+<div ui-view>
 </div>
 </body>
 </html>

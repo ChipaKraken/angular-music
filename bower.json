@@ -1,8 +1,24 @@
 {
-  "name": "app",
-  "version": "0.0.0",
+  "name": "angular-music",
+  "version": "0.0.2",
+  "homepage": "https://github.com/ChipaKraken/angular-music",
+  "authors": [
+    "Chyngyz Dyikanbaev <chipalino@live.com>"
+  ],
+  "description": "Angular Music is Client Side music searcher",
+  "main": "brain.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "1.2.15",
+    "angular": "~1.2.15",
+    "angular-ui-router": "~0.2.10",
+    "jquery": ">= 1.9.0",
     "bootstrap": "~3.0.3"
   }
 }
