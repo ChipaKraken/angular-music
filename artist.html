@@ -1,16 +1,21 @@
-<form ng-submit="searchSongs()">
-	<input type="text" ng-model="artist" placeholder="Artist to search" id="artist">
-	<input class="btn-primary" type="submit" value="Search">
+<form ng-submit="searchSongs()" class="ng-scope ng-pristine ng-valid form-inline" style="
+    margin: auto; text-align: center;
+    width: 30%;
+">
+	<input type="text" ng-model="artist" placeholder="Artist to search" id="artist" class="ng-pristine ng-valid form-control">
+	<input class="btn btn-primary" type="submit" value="Search">
 </form>
-<table>
-	<tr>
-		<th ng-repeat="art in arts"><p class="nextart" ng-click="search(art)">{{art}}</p></th>
-	</tr>
-	<tr>
-		<td ng-repeat="img in imgs"><img ng-src="{{img}}" class="img-thumbnail" ng-click="search(arts[$index])"></td>
-	</tr>
-</table>
-<div class="col-sm-5">
+<center>
+	<table>
+		<tr>
+			<th ng-repeat="art in arts"><p class="nextart" ng-click="search(art)">{{art}}</p></th>
+		</tr>
+		<tr>
+			<td ng-repeat="img in imgs"><img ng-src="{{img}}" class="img-thumbnail" ng-click="search(arts[$index])"></td>
+		</tr>
+	</table>
+</center>
+<div class="col-sm-6 col-md-offset-3">
 	<div class="list-group">
 		<div ng-repeat="song in songs">
 			<a ng-click="play(song.artist.name, song.name, $index)" ng-class='{"active":sel==$index}' class="list-group-item" class="s">{{song.artist.name}} - {{song.name}}</a>	
