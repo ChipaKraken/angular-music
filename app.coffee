@@ -1,5 +1,5 @@
 audio = ''
-angular.module 'app', ['ui.router']
+angular.module 'app', ['ui.router','ngSanitize']
 
 .config ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider)->
 	$urlRouterProvider.otherwise('/')
@@ -16,10 +16,15 @@ angular.module 'app', ['ui.router']
 	return
 ]
 
-.controller 'musicContr', ['$scope', '$state', ($scope, $state) ->
+.controller 'musicContr', ['$scope', '$state', '$sce', ($scope, $state, $sce) ->
 	$scope.songs = []
+	$scope.stream = ""
 	$scope.arts = []
 	$scope.imgs = []
+
+	audiojs.events.ready ()-> 
+		as = audiojs.createAll()
+		return
 
 	$scope.search = (art)->
 		$scope.artist = art
@@ -41,11 +46,6 @@ angular.module 'app', ['ui.router']
 		return
 
 	$scope.play = (who, what, id)->
-		if audio == ''
-			audio = ''
-		else
-			audio.pause()
-
 		$(".active").removeClass("active")
 		this.sel = id
 		track = who + ' - ' + what
@@ -56,8 +56,7 @@ angular.module 'app', ['ui.router']
 		if stream.indexOf('api.soundcloud.com') != -1
 			stream += sc_api_key
 
-		audio = new Audio(stream)
-		audio.play()
+		$("#stream").attr("src", stream).trigger("play")
 		return
 	return
 	]

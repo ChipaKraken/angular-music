@@ -3,15 +3,22 @@
 <head>
 	<title>Kraken Music App</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<script src="brain.js"></script>
+  <script src="http://kolber.github.io/audiojs/audiojs/audio.min.js"></script>
+  <style type="text/css">.audiojs .play-pause {width: 40px;}</style>
 </head>
 <body ng-app="app">
-
 <a href="https://github.com/ChipaKraken/c_report/archive/master.zip">Download Angular Music</a>
 <span> or </span>
 <a href="https://github.com/ChipaKraken/angular-music">View on GitHub</a>
-
+<span> or </span>
+<div class="fb-share-button" data-href="http://chipakraken.github.io/angular-music" data-type="button_count"></div>
+<center>
+<br/>
+  <audio id="stream"></audio>
+<br/>
+</center>
 <div ui-view>
 </div>
 </body>
